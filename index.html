@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ふわっとひつじのオリジナルトランプで遊ぶカードゲーム" />
+    <title>FUWATTO CARD GAMES</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+  </head>
+  <body class="lobby-page">
+    <main class="lobby-shell">
+      <section class="lobby-hero" aria-labelledby="site-title">
+        <div class="lobby-hero__copy">
+          <p class="eyebrow">FUWATTO SHEEP PRESENTS</p>
+          <h1 id="site-title">CARD GAMES</h1>
+          <p class="lobby-lead">ふわっとひつじと、<br />今日の一局をゆっくりと。</p>
+          <p class="lobby-note">ふわっとひつじと仲間たちの、小さなカードゲーム集。</p>
+        </div>
+        <div class="lobby-hero__art" aria-hidden="true">
+          <img class="hero-card hero-card--front" src="./assets/card-images/H_K.webp" alt="" width="480" height="720" />
+          <img class="hero-sheep" src="./assets/characters/sheep_1.png" alt="" width="420" height="500" />
+        </div>
+      </section>
+      <section class="game-list" aria-label="ゲーム一覧">
+        <article class="game-tile game-tile--active">
+          <p class="game-tile__number">01</p>
+          <h2>SOLITAIRE</h2>
+          <p>クロンダイク</p>
+          <div class="game-tile__actions">
+            <a class="button button--primary" href="./games/solitaire/">PLAY <span aria-hidden="true">→</span></a>
+            <button class="button button--secondary" type="button" data-how-to="solitaire">遊び方</button>
+            <button class="button button--secondary" type="button" data-ranking-game="solitaire">ランキング</button>
+          </div>
+        </article>
+        <article class="game-tile game-tile--active">
+          <img class="game-tile__character" src="./assets/characters/wolf_1.png" alt="" width="180" height="180" loading="lazy" /><p class="game-tile__number">02</p><h2>SPIDER</h2><p>スパイダー</p><div class="game-tile__actions"><a class="button button--primary" href="./games/spider/">PLAY <span aria-hidden="true">→</span></a><button class="button button--secondary" type="button" data-how-to="spider">遊び方</button><button class="button button--secondary" type="button" data-ranking-game="spider">ランキング</button></div>
+        </article>
+        <article class="game-tile game-tile--active">
+          <img class="game-tile__character" src="./assets/characters/penguin_1.png" alt="" width="180" height="180" loading="lazy" />
+          <p class="game-tile__number">03</p>
+          <h2>FREECELL</h2>
+          <p>フリーセル</p>
+          <div class="game-tile__actions">
+            <a class="button button--primary" href="./games/freecell/">PLAY <span aria-hidden="true">→</span></a>
+            <button class="button button--secondary" type="button" data-how-to="freecell">遊び方</button>
+            <button class="button button--secondary" type="button" data-ranking-game="freecell">ランキング</button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <dialog id="how-to-modal" class="lobby-modal">
+      <form method="dialog">
+        <button class="modal-close" value="close" aria-label="遊び方を閉じる">×</button>
+        <p class="eyebrow" id="how-to-eyebrow">HOW TO PLAY</p>
+        <h2 id="how-to-title">遊び方</h2>
+        <ul id="how-to-list"></ul>
+      </form>
+    </dialog>
+    <dialog id="ranking-modal" class="lobby-modal lobby-ranking-modal">
+      <form method="dialog">
+        <button class="modal-close" value="close" aria-label="ランキングを閉じる">×</button>
+        <p class="eyebrow">LEADERBOARD</p>
+        <h2 id="ranking-title">ランキング</h2>
+        <div class="ranking-controls">
+          <label>ゲーム<select id="ranking-game"><option value="solitaire">クロンダイク</option><option value="spider">スパイダー</option><option value="freecell">フリーセル</option></select></label>
+          <label>難易度<select id="ranking-difficulty"></select></label>
+          <button type="button" id="ranking-refresh">更新</button>
+        </div>
+        <p class="ranking-feedback" id="ranking-message" role="status">読み込み中…</p>
+        <div class="ranking-table-wrap"><table><thead><tr><th>順位</th><th>名前</th><th>スコア</th><th>時間</th><th>手数</th></tr></thead><tbody id="ranking-list"></tbody></table></div>
+      </form>
+    </dialog>
+    <script type="module" src="./js/lobby.js"></script>
+  </body>
+</html>

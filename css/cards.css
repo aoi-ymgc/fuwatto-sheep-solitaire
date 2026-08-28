@@ -1,0 +1,9 @@
+.card, .card-slot { width: var(--card-w, 100px); aspect-ratio: 2 / 3; border-radius: calc(var(--card-w, 100px) * .06); }
+.card { position: absolute; left: 0; top: 0; padding: 0; border: 0; background: #fffdf7 center / cover no-repeat; box-shadow: 0 2px 5px rgba(5, 34, 39, .22); touch-action: none; transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease; }
+.card[aria-pressed="true"], .card.is-selected { transform: translateY(-5px); box-shadow: 0 9px 16px rgba(5, 34, 39, .3); }
+.card.is-dragging { z-index: 1000 !important; pointer-events: none; filter: brightness(1.04); }
+.card.is-flipping { animation: card-flip 260ms ease; }
+.card-slot { position: relative; border: 1px dashed rgba(255, 253, 244, .4); background: rgba(255, 253, 244, .06); }
+.card-slot.is-drop-target, .tableau-pile.is-drop-target { outline: 3px solid #f3d998; outline-offset: 2px; background-color: rgba(243, 217, 152, .18); }
+@keyframes card-flip { 0% { transform: rotateY(0deg); } 49% { transform: rotateY(90deg); } 100% { transform: rotateY(0deg); } }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .card.is-flipping { animation: none; } }

@@ -1,0 +1,11 @@
+{
+  "name": "fuwatto-sheep-solitaire",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node --check src/worker.js && node --check js/cards.js && node --check js/deck.js && node --check js/lobby.js && node --check js/rankings.js && node --check js/storage.js && node --check js/sound.js && node --check games/solitaire/rules.js && node --check games/solitaire/solitaire.js && node --check games/solitaire/ui.js && node --check games/spider/rules.js && node --check games/spider/spider.js && node --check games/spider/ui.js && node --check games/freecell/rules.js && node --check games/freecell/freecell.js && node --check games/freecell/ui.js",
+    "test": "node tests/solitaire-core.test.mjs && node tests/spider-core.test.mjs && node tests/freecell-core.test.mjs && node tests/audio-toggle-sequence.test.mjs",
+    "deploy": "npm run build && npx wrangler deploy"
+  }
+}

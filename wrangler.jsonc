@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fuwatto-sheep-solitaire",
+  "compatibility_date": "2026-08-24",
+  "main": "src/worker.js",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "fuwatto_sheep_rankings",
+      "database_name": "fuwatto-sheep-rankings",
+      "database_id": "90387f5e-43e1-45b4-8fa2-134631467f5f",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
