@@ -2,6 +2,8 @@
 
 オリジナルの「ふわっとひつじ」トランプを使った、ブラウザで遊べるクロンダイク・スパイダー・フリーセルのカードゲーム集です。
 
+公開サイト: https://fuwatto-sheep-solitaire.aoiroymgc.workers.dev/
+
 ## 使用技術
 
 - HTML / CSS / JavaScript（ES Modules）
